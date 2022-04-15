@@ -38,7 +38,6 @@ resetForm = () => {
       ...this.state, email: value})
   }
   
-// //cleanup helpers
   postOnSubmit = () =>{
     axios.post('http://localhost:9000/api/result', { x: this.state.x, y: this.state.y, steps: this.state.steps, email: this.state.email } )
     .then(res => {
@@ -68,6 +67,7 @@ resetForm = () => {
     this.postOnSubmit();
   }
 
+// usable buttons 
 onClick = (varX, varY) => {
   
     if(this.state.x + varX > 3) {
@@ -95,7 +95,7 @@ onClick = (varX, varY) => {
       const idxY = (this.state.y-1);
       const idxXB = (idxX + varX);
       const idxYB = (idxY + varY)
-      const updatedBoard = [...this.state.board];
+      const updatedBoard = [...this.state.board]; // had to turn it into a usable array first
       updatedBoard[idxY][idxX] = null
       updatedBoard[idxYB][idxXB] = 'B'
       
