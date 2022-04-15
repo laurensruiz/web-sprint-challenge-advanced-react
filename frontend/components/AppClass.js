@@ -1,8 +1,23 @@
 import React from 'react'
 
 export default class AppClass extends React.Component {
+  state ={
+    X: 2,
+    Y: 2,
+    counter: 0,
+    board:[
+      ["", "", ""],
+      ["", "B", ""],
+      ["", "", ""],
+    ],
+  }
+  
+
   render() {
     const { className } = this.props
+    const squareActive= this.state.board[1][1]
+    const flattenedBoard= this.state.board.flat()
+    
     return (
       <div id="wrapper" className={className}>
         <div className="info">
@@ -10,7 +25,10 @@ export default class AppClass extends React.Component {
           <h3 id="steps">You moved 0 times</h3>
         </div>
         <div id="grid">
-          <div className="square"></div>
+        {flattenedBoard.map((val)=>{
+          return <div className={`${val? 'square active' : 'square'}`}>{val}</div>
+        })}
+          {/* <div className="square"></div>
           <div className="square"></div>
           <div className="square"></div>
           <div className="square"></div>
@@ -18,7 +36,7 @@ export default class AppClass extends React.Component {
           <div className="square"></div>
           <div className="square"></div>
           <div className="square"></div>
-          <div className="square"></div>
+          <div className="square"></div> */}
         </div>
         <div className="info">
           <h3 id="message"></h3>
@@ -35,6 +53,7 @@ export default class AppClass extends React.Component {
           <input id="submit" type="submit"></input>
         </form>
       </div>
+      
     )
   }
 }
