@@ -50,7 +50,7 @@ onClickL = () => {
     this.setState({
       ...this.state,
       steps: this.state.steps + 1,
-      x: this.state.x -1,
+      x: this.state.x <= 3 && this.state.x > 1? this.state.x -1: this.state.x,
       y: this.state.y 
     })
   }
@@ -59,7 +59,7 @@ onClickR = () => {
     this.setState({
       ...this.state,
       steps: this.state.steps + 1,
-      x: this.state.x +1,
+      x: this.state.x < 3 && this.state.x >= 1? this.state.x +1: this.state.x,
       y: this.state.y 
     })
   }
@@ -69,16 +69,17 @@ onClickR = () => {
       ...this.state,
       steps: this.state.steps + 1,
       x: this.state.x,
-      y: this.state.y +1
+      y: this.state.y < 3 && this.state.y >= 1? this.state.y +1 : this.state.y
     })
   }
 
   onClickD = () => {
+    
     this.setState({
       ...this.state,
       steps: this.state.steps + 1,
       x: this.state.x,
-      y: this.state.y -1
+      y: this.state.y <= 3 && this.state.y > 1? this.state.y -1 : this.state.y
     })
   }
   
