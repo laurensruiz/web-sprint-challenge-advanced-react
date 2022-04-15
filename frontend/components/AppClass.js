@@ -67,7 +67,7 @@ resetForm = () => {
     this.postOnSubmit();
   }
 
-// usable buttons 
+// usable buttons // think of coordinates
 onClick = (varX, varY) => {
   
     if(this.state.x + varX > 3) {
