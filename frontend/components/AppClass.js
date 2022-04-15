@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import axios from 'axios'
-import { useEffect } from 'react'
+
 
 export default class AppClass extends React.Component {
   state ={
@@ -17,7 +17,7 @@ export default class AppClass extends React.Component {
 
 //reset
 resetForm = () => {
-  this.setState({ ...this.state, 
+  this.setState({
     x: 2,
     y: 2,
     steps: 0,
@@ -98,7 +98,7 @@ onClick = (varX, varY) => {
       const updatedBoard = [...this.state.board];
       updatedBoard[idxY][idxX] = null
       updatedBoard[idxYB][idxXB] = 'B'
-      console.log(updatedBoard)
+      
       this.setState({
         ... this.state,
         x: this.state.x+ varX,
@@ -147,7 +147,6 @@ onClick = (varX, varY) => {
           <input id="submit" type="submit"></input>
         </form>
       </div>
-      
     )
   }
 }
