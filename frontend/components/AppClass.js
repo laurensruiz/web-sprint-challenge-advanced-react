@@ -26,6 +26,7 @@ resetForm = () => {
       [null, "B", null], 
       [null, null, null]],
     email: '',
+    message:''
     
   })
 }
@@ -44,7 +45,10 @@ resetForm = () => {
       this.setState({
         ...this.state,
         message: res.data.message,
-        board:["", "", "", "", "B", "","", "", ""],
+        board:[
+          [null, null, null], 
+          [null, "B", null], 
+          [null, null, null]],
         email: '',
       })
       
@@ -62,7 +66,6 @@ resetForm = () => {
   onSubmit = e => {
     e.preventDefault();
     this.postOnSubmit();
-    
   }
 
 onClick = (varX, varY) => {
